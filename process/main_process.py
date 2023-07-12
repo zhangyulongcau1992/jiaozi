@@ -221,7 +221,7 @@ def main_process2(personal_info, num_of_dumpling, meat_percent, output_file_path
     nutrition_list = compute_combine_nutrition_list(nutrition_list_flour, nutrition_list_meat, nutrition_list_vegetable,
                                                     output_file_path)
     # 设置筛选条件，需要满足对应营养值为1
-    nutrition_filter = ["能量(千卡）", "蛋白质（克）", "脂肪（克）", "碳水化物（克）"]
+    nutrition_filter = ["能量(千卡）", "蛋白质（克）", "脂肪（克）", "碳水化物（克）", "维生素C（毫克）", "钙（毫克）"]
     nutrition_best_value_list = compute_nutrition_best_value(["综合"], nutrition_list, RNI_range, output_file_path,
                                                              weight, nutrition_filter, 10)
     for i in range(ADJUST_ITER_NUM):

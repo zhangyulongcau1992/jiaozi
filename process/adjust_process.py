@@ -29,10 +29,11 @@ def get_total_weight(food_weight_list):
 def get_food_exclude_list(food_info, food_name_list):
     food_exclude_list = []
     for food_name in food_name_list:
+        food_exclude_list.append(food_name)
         current_food_forbidden = food_info.loc[food_name, FOOD_INFO_LIST[2]]
         if not pd.isnull(current_food_forbidden):
             food_exclude_list.extend(current_food_forbidden.split(SEPARATOR_FORBIDDEN_FOOD))
-    return food_exclude_list
+    return list(set(food_exclude_list))
 
 
 def get_food_main_kind(food_name_list, food_weight_list):
